@@ -2,32 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.disabled-button {
+    background: linear-gradient(89deg, rgba(102, 102, 102, 0.80) 0%, rgba(255, 255, 255, 0.10) 99.92%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff1a;
+    -moz-background-clip: text;
+    -moz-text-fill-color: #ffffff1a;
+    -o-background-clip: text;
+    -o-text-fill-color: #ffffff1a;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.animated-text-background {
+    background: linear-gradient(98deg, rgba(102, 254, 203, 0.20) 6.1%, rgba(137, 64, 255, 0.20) 103.66%), rgba(29, 29, 29, 0.05);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    z-index: 2;
+}
+.animated-text-background::after {
+    /* display: none; */
+    width: 280px;
+    height: 120px;
+    position: absolute;
+    top: 12;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    filter: blur(24px);
+    z-index: 1;
+    content: "";
+    opacity: 0.5;
+    background: conic-gradient(
+      from 0deg,
+      #BB08F9 0%,
+      #BB08F9 21%,
+      #9694FF 36%,
+      #FF65E6 57%,
+      #2998D6 78%,
+      #6904FF 100%
+    );
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animated-text-color {
+    background: linear-gradient(90deg, #C8C8C8 4.29%, #878787 97.5%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: #C8C8C8;
 }
