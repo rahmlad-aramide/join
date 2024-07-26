@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: 4px;
+}
+
 .disabled-button {
     background: linear-gradient(89deg, rgba(102, 102, 102, 0.80) 0%, rgba(255, 255, 255, 0.10) 99.92%);
     background-clip: text;
@@ -50,3 +55,12 @@ background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: #C8C8C8;
 }
+
+.react-multi-carousel-list {
+  padding: 0rem 0 2rem 0;
+  }
+
+  .bg-join-tokens {
+    background-size: calc(100% - 30px);
+    background-position: bottom left;
+  }

@@ -23,12 +23,12 @@ export const Button: React.FC<ButtonProps> = ({
   loading,
 }) => {
   const variantStyles = {
-    outlined: "bg-transparent border border-grey-200 text-cuneutral-700",
-    shaped: "bg-transparent text-cuneutral-700 hover:scale-95 active:scale-100 transition duration-200 h-10",
-    "shaped-disabled": "bg-[rgba(92,78,222,0.10)] text-cuneutral-700 cursor-not-allowed h-10 min-w-[170px]",
-    "shaped-gradient": "bg-transparent text-cuneutral-700 hover:scale-95 active:scale-100 transition duration-200",
-    "shaped-gradient-outline": "bg-transparent text-cuneutral-700 hover:scale-95 active:scale-100 transition duration-200",
-    "shaped-white": "bg-white text-cuneutral-700 hover:scale-95 active:scale-100 transition duration-200",
+    outlined: "bg-transparent border border-grey-200",
+    shaped: "bg-transparent hover:scale-95 active:scale-100 transition duration-200 h-10",
+    "shaped-disabled": "bg-transparent text-[rgba(102,102,102,0.80)] cursor-not-allowed h-10 min-w-[170px]",
+    "shaped-gradient": "bg-transparent hover:scale-95 active:scale-100 transition duration-200",
+    "shaped-gradient-outline": "bg-transparent hover:scale-95 active:scale-100 transition duration-200",
+    "shaped-white": "text-[#04141D] font-semibold text-[23px] hover:scale-95 active:scale-100 transition duration-200",
     primary: "bg-primary-500 text-white",
     text: "bg-transparent border-none text-[#F2E6E0] hover:text-hoverPrimary"
   };
@@ -45,10 +45,11 @@ export const Button: React.FC<ButtonProps> = ({
     backgroundPosition: "center",
     filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
   } : variant === 'shaped-gradient' ? {
-    backgroundImage: "url('data:image/svg+xml,%3Csvg width=%22144%22 height=%2241%22 viewBox=%220 0 144 41%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M31.6714 40.8571C29.2379 40.8571 26.9803 40.2899 25.7149 39.3605L11.5748 28.8951C6.17345 24.8975 6.17345 16.8167 11.5748 12.8192L25.7149 2.35382C26.9803 1.42439 29.2379 0.857147 31.6714 0.857147V40.8571Z%22 fill=%22%231D1D1D%22 fill-opacity=%220.05%22/%3E%3Cpath d=%22M31.6714 40.8571C29.2379 40.8571 26.9803 40.2899 25.7149 39.3605L11.5748 28.8951C6.17345 24.8975 6.17345 16.8167 11.5748 12.8192L25.7149 2.35382C26.9803 1.42439 29.2379 0.857147 31.6714 0.857147V40.8571Z%22 fill=%22url(%23paint0_linear_398_1590)%22 fill-opacity=%220.2%22/%3E%3Crect width=%2288%22 height=%2240%22 transform=%22translate(31.6714 0.857147)%22 fill=%22%231D1D1D%22 fill-opacity=%220.05%22/%3E%3Crect width=%2288%22 height=%2240%22 transform=%22translate(31.6714 0.857147)%22 fill=%22url(%23paint1_linear_398_1590)%22 fill-opacity=%220.2%22/%3E%3Cpath d=%22M119.671 40.8571C122.105 40.8571 124.362 40.2899 125.628 39.3605L139.768 28.8951C145.169 24.8975 145.169 16.8167 139.768 12.8192L125.628 2.35382C124.362 1.42439 122.105 0.857147 119.671 0.857147V40.8571Z%22 fill=%22%231D1D1D%22 fill-opacity=%220.05%22/%3E%3Cpath d=%22M119.671 40.8571C122.105 40.8571 124.362 40.2899 125.628 39.3605L139.768 28.8951C145.169 24.8975 145.169 16.8167 139.768 12.8192L125.628 2.35382C124.362 1.42439 122.105 0.857147 119.671 0.857147V40.8571Z%22 fill=%22url(%23paint2_linear_398_1590)%22 fill-opacity=%220.2%22/%3E%3Cdefs%3E%3ClinearGradient id=%22paint0_linear_398_1590%22 x1=%222.00417%22 y1=%228.85715%22 x2=%2236.008%22 y2=%2212.5122%22 gradientUnits=%22userSpaceOnUse%22%3E%3Cstop stop-color=%22%238940FF%22/%3E%3Cstop offset=%221%22 stop-color=%22%2366FECB%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22paint1_linear_398_1590%22 x1=%223.66667%22 y1=%228%22 x2=%2293.095%22 y2=%2235.3253%22 gradientUnits=%22userSpaceOnUse%22%3E%3Cstop stop-color=%22%2366FECB%22/%3E%3Cstop offset=%221%22 stop-color=%238940FF%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22paint2_linear_398_1590%22 x1=%22142.813%22 y1=%228.85715%22 x2=%22116.169%22 y2=%2211.0911%22 gradientUnits=%22userSpaceOnUse%22%3E%3Cstop stop-color=%22%2366FECB%22/%3E%3Cstop offset=%221%22 stop-color=%238940FF%22/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E')",
+    backgroundImage: "url('/shaped-gradient.svg')",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
     backgroundPosition: "center",
+    backgroundSize: 156,
+    // backgroundSize: "contain",
   } : variant === 'shaped-gradient-outline' ? {
     backgroundImage: "url('data:image/svg+xml,%3Csvg width=%22248%22 height=%2262%22 viewBox=%220 0 248 62%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M35.8053 60.4442C32.872 60.2405 30.4077 59.4716 29.0568 58.477L29.0543 58.4752L7.18637 42.231C-0.333021 36.6454 -0.333021 25.3546 7.18637 19.769L29.0543 3.52486L29.0562 3.52344C30.407 2.52864 32.8715 1.75958 35.8053 1.5558V0C32.649 0.205091 29.8244 1.03078 28.1386 2.27363L6.26616 18.5211C-2.08872 24.7273 -2.08872 37.2727 6.26616 43.4789L28.1386 59.7264C29.8244 60.9693 32.649 61.7949 35.8053 62V60.4442Z%22 fill=%22url(%23paint0_linear_398_1304)%22/%3E%3Cmask id=%22path-2-inside-1_398_1304%22 fill=%22white%22%3E%3Cpath d=%22M35.8054 0H211.805V62H35.8054V0Z%22/%3E%3C/mask%3E%3Cpath d=%22M35.8054 1.54683H211.805V-1.54683H35.8054V1.54683ZM211.805 60.4532H35.8054V63.5468H211.805V60.4532Z%22 fill=%22url(%23paint1_linear_398_1304)%22 mask=%22url(%23path-2-inside-1_398_1304)%22/%3E%3Cpath d=%22M211.805 60.4442C214.739 60.2405 217.203 59.4716 218.554 58.477L218.556 58.4752L240.424 42.231C247.944 36.6454 247.944 25.3546 240.424 19.769L218.556 3.52486L218.554 3.52344C217.204 2.52864 214.739 1.75958 211.805 1.5558V0C214.962 0.205091 217.786 1.03078 219.472 2.27363L241.344 18.5211C249.699 24.7273 249.699 37.2727 241.344 43.4789L219.472 59.7264C217.786 60.9693 214.962 61.7949 211.805 62V60.4442Z%22 fill=%22url(%23paint2_linear_398_1304)%22/%3E%3Cdefs%3E%3ClinearGradient id=%22paint0_linear_398_1304%22 x1=%221.49189%22 y1=%2212.4%22 x2=%2241.0213%22 y2=%2215.5706%22 gradientUnits=%22userSpaceOnUse%22%3E%3Cstop stop-color=%22%238AE6CF%22/%3E%3Cstop offset=%221%22 stop-color=%22%237C3AE7%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22paint1_linear_398_1304%22 x1=%2243.3483%22 y1=%2231.492%22 x2=%22207.405%22 y2=%2231.492%22 gradientUnits=%22userSpaceOnUse%22%3E%3Cstop stop-color=%22%237D46E5%22/%3E%3Cstop offset=%220.51%22 stop-color=%22%2389DFD0%22 stop-opacity=%220%22/%3E%3Cstop offset=%220.985%22 stop-color=%22%237D46E5%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22paint2_linear_398_1304%22 x1=%22246.119%22 y1=%2212.4%22 x2=%22206.589%22 y2=%2215.5706%22 gradientUnits=%22userSpaceOnUse%22%3E%3Cstop stop-color=%22%238AE6CF%22/%3E%3Cstop offset=%221%22 stop-color=%22%237C3AE7%22/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E')",
     backgroundRepeat: "no-repeat",
@@ -66,7 +67,7 @@ export const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       type={type}
       disabled={disabled || loading}
-      className={`${className} ${variantStyles[variant]} h-10 md:h-[56px] text-sm md:text-base px-[14px] md:px-6 items-center justify-center flex font-medium rounded-[32px] disabled:cursor-not-allowed relative overflow-hidden`}
+      className={`${className} ${variantStyles[variant]} h-10 text-sm md:text-base px-[14px] md:px-6 items-center justify-center flex font-medium disabled:cursor-not-allowed relative overflow-hidden`}
       style={variantSpecificStyles}
     >
       {loading ? <LoadingIndicator /> : children}

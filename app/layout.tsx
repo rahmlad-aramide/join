@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { gilroy } from "@/app/fonts";
-import { Navbar } from "@/app/ui/navbar";
-import { VideoBackground } from "@/app/ui/hero/video";
+import "./globals.css";
+import { Footer } from "./ui/footer";
+import { VideoBackground } from "./ui/bg-video";
+import { Navbar } from "./ui/navbar";
 
 export const metadata: Metadata = {
   title: "JOIN - One For All",
@@ -15,15 +16,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
       <body className={`${gilroy.className} bg-background text-whitePrimary`}>
-        <header>
-          <VideoBackground height="fit-content">
-            <Navbar />
-          </VideoBackground>
-        </header>
+      <VideoBackground as="header" height="fit-content">
+        <Navbar />
+      </VideoBackground>
         {children}
+        <Footer />
       </body>
     </html>
   );

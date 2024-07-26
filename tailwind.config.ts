@@ -25,7 +25,10 @@ const config = {
         hoverPrimary: "#9891E1",
       },
       backgroundImage: {
-        'custom-conic': 'conic-gradient(from 0deg, #BB08F9 0%, #BB08F9 21%, #9694FF 36%, #FF65E6 57%, #2998D6 78%, #6904FF 100%)'
+        'custom-conic': 'conic-gradient(from 0deg, #BB08F9 0%, #BB08F9 21%, #9694FF 36%, #FF65E6 57%, #2998D6 78%, #6904FF 100%)',
+        'join-tokens': "url('/join-tokens-bg.png')",
+        'slide-primary': "url('/slide1-bg.png')",
+        'joinda-linear': "linear-gradient(98deg, rgba(102, 254, 203, 0.20) 6.1%, rgba(137, 64, 255, 0.20) 103.66%), rgba(29, 29, 29, 0.05)",
       },
       maxWidth: {
         "8xl": "1440px",
@@ -51,6 +54,10 @@ const config = {
           "0%": { transform: "translateY(0)", opacity: "1" },
           "100%": { transform: "translateY(-50%)", opacity: "0" },
         },
+        "bounce-token": {
+          '0%, 100%': { transform: "translateY(-4%)" },
+          '50%': { transform: "translateY(4%)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -58,6 +65,7 @@ const config = {
         marquee: "marquee 8s linear infinite",
         "slide-in": "slide-in 0.2s ease-in-out forwards",
         "slide-out": "slide-out 0.2s ease-in-out forwards",
+        "bounce-token": "bounce-token 3s linear infinite",
       },
       transitionProperty: {
         width: "width",

@@ -15,7 +15,6 @@ import { useRouter } from "next/navigation";
 import { NavUnderline } from "@/app/assets/svg";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { Span } from "next/dist/trace";
 
 interface NavLink {
   label: string;
@@ -41,7 +40,7 @@ const navLinksLeft: NavLink[] = [
     label: "Whitepaper",
     path: "/whitepaper",
     type: "button",
-    buttonType: "text"
+    buttonType: "text",
   },
   {
     label: "Products",
@@ -78,12 +77,10 @@ export const Navbar = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
   useEffect(() => {
-      const scrollTop =
-        window.scrollY || document.documentElement.scrollTop;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const handleScroll = () => {
-        const windowHeight = window.innerHeight;
 
-      if (scrollTop > windowHeight-150) {
+      if (scrollTop > 108) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -101,21 +98,24 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-        window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollTop]);
 
   return (
     <>
       <nav
-        className={clsx("transition-all duration-300 ease-in-out w-full fixed top-0 z-50", {
-          "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
-          "-translate-y-full": hidden,
-          "translate-y-0": !hidden,
-        })}
+        className={clsx(
+          "transition-all duration-300 ease-in-out w-full fixed top-0 z-50",
+          {
+            "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
+            "-translate-y-full": hidden,
+            "translate-y-0": !hidden,
+          }
+        )}
       >
         <div className="h-20 w-full flex flex-col items-center justify-center">
-          <nav className="w-[calc(100%_-_64px)] md:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex justify-between items-center">
+          <div className="w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex justify-between items-center">
             <ul className="hidden lg:flex gap-5 items-center w-2/5">
               {navLinksLeft.map((navLink, idx) =>
                 navLink.type === "dropdown" ? (
@@ -156,15 +156,17 @@ export const Navbar = () => {
                   </NavigationMenu>
                 ) : navLink.type === "button" ? (
                   <Button
+                    key={`${navLink} ${idx}`}
                     variant={navLink.buttonType}
                     className="font-semibold !uppercase text-[15px] transition-colors min-h-10 !h-fit"
-                    disabled={(navLink?.disabled && navLink.disabled)? true: false}
+                    disabled={
+                      navLink?.disabled && navLink.disabled ? true : false
+                    }
                     onClick={() => {
                       router.push(`${navLink.path}`);
                     }}
-                  >{(navLink?.disabled && navLink.disabled) ? <span className="opacity-50 !text-[#ffffff1a]">{navLink.disabled}</span>:
-                    navLink.label
-                  }
+                  >
+                    {navLink.label}
                   </Button>
                 ) : (
                   <Link
@@ -181,10 +183,7 @@ export const Navbar = () => {
                 )
               )}
             </ul>
-            <Link
-              href="/"
-              className="flex translate-y-4"
-            >
+            <Link href="/" className="flex translate-y-4">
               <Logo className="h-6 md:h-full" />
             </Link>
             <ul className="hidden lg:flex justify-end gap-5 items-center w-2/5">
@@ -201,7 +200,7 @@ export const Navbar = () => {
                 </Button>
               ))}
             </ul>
-          </nav>
+          </div>
         </div>
         <div className="flex justify-center items-center overflow-hidden z-50">
           <NavUnderline />
