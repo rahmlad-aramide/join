@@ -8,6 +8,7 @@ import purchases from "@/app/assets/images/possibilities/purchases.png";
 import rewards from "@/app/assets/images/possibilities/rewards.png";
 import lotteries from "@/app/assets/images/possibilities/lotteries.png";
 import funds from "@/app/assets/images/possibilities/funds.png";
+import React from "react";
 
 const responsive = {
   monitor: {
@@ -37,7 +38,7 @@ const responsive = {
     slidesToSlide: 1,
   },
 };
-export const PossibilitiesCarousel = () => {
+export const PossibilitiesCarousel: React.FC = () => {
   return (
     <Carousel
       swipeable={true}
