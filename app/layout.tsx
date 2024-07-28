@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "./ui/footer";
 import { VideoBackground } from "./ui/bg-video";
 import { Navbar } from "./ui/navbar";
+import LayoutClient from "./layout-client";
 
 export const metadata: Metadata = {
   title: "JOIN - One For All",
@@ -19,12 +20,15 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <body className={`${gilroy.className} bg-background text-whitePrimary`}>
-      <VideoBackground as="header" height="fit-content">
+      <body className={`${gilroy.className} bg-background text-whitePrimary`} suppressHydrationWarning={true}>
+      <LayoutClient>
+        {children}
+      </LayoutClient>
+      {/* <VideoBackground as="header" height="fit-content">
         <Navbar />
       </VideoBackground>
         {children}
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   );

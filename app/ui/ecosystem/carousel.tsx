@@ -1,9 +1,10 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Carousel, { ButtonGroupProps } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import joinda1 from "@/app/assets/images/joinda-app-1.png";
-import joinda2 from "@/app/assets/images/joinda-app-2.png";
+import joinda1 from "@/app/assets/images/joinda-app-1.webp";
+import joinda2 from "@/app/assets/images/joinda-app-2.webp";
 
 
 const responsive = {
@@ -59,12 +60,27 @@ export const EcosystemCarousel = () => {
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({ next, previous, ...rest }) => {
   const currentSlide = rest.carouselState?.currentSlide ?? 0;
+  const [toggleButton, setToggleButton] = useState(false);
+
+  const handleClick = () => {
+
+    if (next && currentSlide !== 0) {
+      next();
+      setToggleButton(!toggleButton);
+    } else if (previous && currentSlide === 0) {
+      previous();
+      setToggleButton(!toggleButton);
+    }
+  };
+
 
   return (
     <div className="carousel-button-group absolute w-full h-[3px] bottom-0 bg-[#5E5E5E] rounded-[2.286px]"> 
-      {/* remember to give it position:absolute */}
-      <button disabled={!previous} className={currentSlide === 0 ? 'disable bg-blue-500 w-[20px] h-1' : ''} onClick={() => previous && previous()} />
-      <button disabled={!next} onClick={() => next && next()} />
+      <button
+        className={`${toggleButton || currentSlide % 2 === 0? 'translate-x-0': 'translate-x-full'} w-1/2 h-[3px] bg-[#02A8FB] absolute bottom-0 animated-button transition-transform duration-500 rounded-[2.286px]`}
+        onClick={handleClick}
+        disabled={(!next && currentSlide !== 0) || (!previous && currentSlide === 0)}
+      />
     </div>
   );
 };

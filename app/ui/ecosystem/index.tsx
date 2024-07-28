@@ -9,7 +9,7 @@ import {
 } from "@/app/assets/svg";
 import { VideoBackground } from "@/app/ui/bg-video";
 import { Button } from "../button";
-import joint from "@/app/assets/images/joint-app.png";
+import joint from "@/app/assets/images/joint-app.webp";
 import { EcosystemCarousel } from "./carousel";
 
 export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {

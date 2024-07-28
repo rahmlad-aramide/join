@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../button";
-import tokens from '@/app/assets/images/join-tokens.png'
+import tokens from '@/app/assets/images/join-tokens.webp'
 
 export const MarqueeSection = () => {
     const gradientStyle = {

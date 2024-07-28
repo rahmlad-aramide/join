@@ -14,7 +14,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
   as: Component = 'div' 
 }) => {
   return (
-    <Component className={`relative w-full ${height === 'screen' ? 'h-full min-h-screen' : 'h-fit'} ${variant === 'hero'? 'pt-32': ''}`}>
+    <Component className={`relative w-full ${height === 'screen' ? 'h-full min-h-fit justify-center items-center' : 'h-fit'} ${variant === 'hero'? 'pt-32': ''}`}>
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay

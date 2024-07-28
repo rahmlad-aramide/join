@@ -12,10 +12,17 @@ import rewards from "@/app/assets/images/possibilities/rewards.webp";
 import funds from "@/app/assets/images/possibilities/funds.webp";
 
 const responsive = {
-  monitor: {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 50
+  },
+  largeDesktop: {
     breakpoint: { max: 3000, min: 1408 },
     items: 4,
     slidesToSlide: 2,
+    partialVisibilityGutter: 50
   },
   desktop: {
     breakpoint: { max: 1408, min: 1056 },
@@ -27,16 +34,19 @@ const responsive = {
     breakpoint: { max: 1056, min: 704 },
     items: 2,
     slidesToSlide: 1,
+    partialVisibilityGutter: 50
   },
   tablet: {
     breakpoint: { max: 704, min: 352 },
     items: 1,
     slidesToSlide: 1,
+    partialVisibilityGutter: 50
   },
   mobile: {
     breakpoint: { max: 352, min: 0 },
     items: 1,
     slidesToSlide: 1,
+    partialVisibilityGutter: 50
   },
 };
 export const PossibilitiesCarousel: React.FC = () => {
@@ -55,17 +65,18 @@ export const PossibilitiesCarousel: React.FC = () => {
       transitionDuration={500}
       containerClass="carousel-container"
       removeArrowOnDeviceType={[
-        "monitor",
+        "superLargeDesktop",
+        "largeDesktop",
         "desktop",
         "laptop",
         "tablet",
         "mobile",
       ]}
       itemClass="carousel-item-padding-40-px"
-      className="py-6 px-10 w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto"
+      className="py-6 px-10 w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto h-fit min-h-[522px]"
     >
-      <div className="ml-0 mx-4 py-8 overflow-hidden">
-        <div className="flex flex-col bg-[#7F5CE2] bg-slide-primary w-full max-w-[352px] h-[522px] rounded-3xl bg-cover">
+      <div className="ml-0 mx-4 py-8 overflow-hidden h-full">
+        <div className="flex flex-col bg-[#7F5CE2] bg-slide-primary max-w-[352px] w-full h-full min-h-[522px] rounded-3xl bg-cover">
           <p className="text-lg text-white p-7">
             Use <span className="font-bold">JOIN</span> as a secure and
             transparent{" "}
@@ -84,9 +95,9 @@ export const PossibilitiesCarousel: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="mx-4 py-8 overflow-hidden">
-        <div className="bg-[#030E14] mix-blend-color-dodge w-full max-w-[352px] h-[522px] rounded-3xl">
-          <p className="text-lg text-white p-7">
+      <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-[#030E14] mix-blend-color-dodge max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
+          <p className="text-lg text-white py-7">
             <span className="font-bold text-[#89DAD0]">
               In-Game Purchases:{" "}
             </span>
@@ -106,37 +117,37 @@ export const PossibilitiesCarousel: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="mx-4 py-8 overflow-hidden">
-        <div className="bg-[#778692] w-full max-w-[352px] h-[522px] rounded-3xl">
-          <p className="text-lg text-white p-7">
+      <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-[#778692] flex flex-col justify-end max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
+          <p className="text-lg text-white py-7">
             <span className="font-bold text-[#89DAD0]">
               In-Game Purchases:{" "}
             </span>
             Spend <span className="font-bold">JOIN</span> on various in-game
             items and features.
           </p>
-          <div className="h-[380px] flex items-center">
+          <div className="flex items-center">
             <Image
             draggable={false}
               src={purchases}
               width={810}
               height={1131}
               alt="Join in-game purchase screen shot"
-              className="flex mx-auto h-full w-auto translate-y-0.5 object-contain"
+              className="flex mx-auto h-auto w-auto"
             />
           </div>
         </div>
       </div>
-      <div className="mx-4 py-8 overflow-hidden">
-        <div className="bg-white max-w-[352px] w-full h-[522px] rounded-3xl p-7 pt-0">
-          <div className="h-[380px] flex items-center">
+      <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-white max-w-[352px] w-full h-full min-h-[522px] rounded-3xl p-7 pt-0">
+          <div className="flex items-start">
             <Image
             draggable={false}
               src={pay}
               width={822}
               height={1224}
               alt="Join payment successful screen shot"
-              className="flex mx-auto w-auto h-full object-contain"
+              className="flex mx-auto w-auto h-auto"
             />
           </div>
           <p className="text-lg text-[#121010] pt-7">
@@ -146,27 +157,27 @@ export const PossibilitiesCarousel: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="mx-4 py-8 overflow-hidden">
-        <div className="bg-[#0089FF] w-full max-w-[352px] h-[522px] rounded-3xl">
-          <p className="text-lg text-white p-7">
+      <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-[#0089FF] w-full max-w-[352px] h-full min-h-[522px] rounded-3xl px-7 flex flex-col justify-end">
+          <p className="text-lg text-white py-7">
             <span className="font-bold">Participate in lotteries </span>
             that ensure fairness through blockchain technology.
           </p>
-          <div className="h-[380px] flex items-center">
+          <div className="flex items-end">
             <Image
             draggable={false}
               src={lotteries}
               width={810}
               height={1131}
               alt="Join lotteries screen shot"
-              className="flex mx-auto h-full translate-y-0.5 w-auto object-contain"
+              className="flex mx-auto h-auto w-auto"
             />
           </div>
         </div>
       </div>
-      <div className="mx-4 py-8 overflow-hidden">
-        <div className="bg-white max-w-[352px] w-full h-[522px] rounded-3xl p-7 pt-0">
-          <div className="h-[380px] flex items-center">
+      <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-white max-w-[352px] w-full h-full min-h-[522px] rounded-3xl p-7 pt-0">
+          <div className="flex items-start">
             <Image
             draggable={false}
               src={rewards}
@@ -183,20 +194,20 @@ export const PossibilitiesCarousel: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="mx-4 py-8 overflow-hidden">
-        <div className="bg-[#1E2337] w-full max-w-[352px] h-[522px] rounded-3xl">
-          <p className="text-lg text-white p-7">
+      <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-[#1E2337] flex flex-col justify-end max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
+          <p className="text-lg text-white py-7">
             <span className="font-bold text-[#89DAD0]">Raise Funds </span>
             by launching crowdfunding campaigns for your projects.
           </p>
-          <div className="h-[380px] flex items-center">
+          <div className="flex items-end">
             <Image
             draggable={false}
               src={funds}
               width={810}
               height={1131}
               alt="Join fundraising screen shot"
-              className="flex mx-auto h-full w-auto object-contain"
+              className="flex mx-auto h-auto w-auto"
             />
           </div>
         </div>

@@ -2,7 +2,7 @@
 import { Navbar } from "@/app/ui/navbar";
 import { VideoBackground } from "@/app/ui/bg-video";
 import { Footer } from "@/app/ui/footer";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Loading from "@/app/loadingme";
 import { Preloader } from "./ui/preloader";
 
@@ -18,15 +18,20 @@ export default function LayoutClient({
       setLoading(false);
     }, 2000);
   }, []);
-  return loading ? (
-    <Preloader />
-  ) : (
+
+  return (
     <>
-      <VideoBackground as="header" height="fit-content">
-        <Navbar />
-      </VideoBackground>
-      {children}
-      <Footer />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <>
+          <VideoBackground as="header" height="fit-content">
+            <Navbar />
+          </VideoBackground>
+          {children}
+          <Footer />
+        </>
+      )}
     </>
   );
 }
