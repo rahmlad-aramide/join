@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -11,7 +11,7 @@ import lotteries from "@/app/assets/images/possibilities/lotteries.webp";
 import rewards from "@/app/assets/images/possibilities/rewards.webp";
 import funds from "@/app/assets/images/possibilities/funds.webp";
 
-const responsive = {
+const responsive1 = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 2000 },
     items: 4,
@@ -25,8 +25,52 @@ const responsive = {
     partialVisibilityGutter: 50
   },
   desktop: {
-    breakpoint: { max: 1408, min: 992 },
+    breakpoint: { max: 1408, min: 1400 },
     items: 3,
+    slidesToSlide: 1,
+    partialVisibilityGutter: 50
+  },
+  laptop: {
+    breakpoint: { max: 1400, min: 1024 },
+    items: 2,
+    slidesToSlide: 1,
+    partialVisibilityGutter: 20
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 352 },
+    items: 1,
+    slidesToSlide: 1,
+    partialVisibilityGutter: 5
+  },
+  mobile: {
+    breakpoint: { max: 352, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+    // partialVisibilityGutter: 5
+  },
+};
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 1600 },
+    items: 4,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 50
+  },
+  largeDesktop: {
+    breakpoint: { max: 1600, min: 1408 },
+    items: 3,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 50
+  },
+  desktop: {
+    breakpoint: { max: 1408, min: 1200 },
+    items: 3,
+    slidesToSlide: 1,
+    partialVisibilityGutter: 50
+  },
+  desktopX: {
+    breakpoint: { max: 1200, min: 992 },
+    items: 2,
     slidesToSlide: 1,
     partialVisibilityGutter: 50
   },
@@ -46,17 +90,44 @@ const responsive = {
     breakpoint: { max: 352, min: 0 },
     items: 1,
     slidesToSlide: 1,
-    partialVisibilityGutter: 50
+    // partialVisibilityGutter: 50
   },
 };
 export const PossibilitiesCarousel: React.FC = () => {
+  const [settings, setSettings] = useState({
+    centerMode: false,
+    partialVisible: true,
+  });
+  useEffect(() => {
+    const updateSettings = () => {
+      const width = window.innerWidth || 704;
+      if (width >= 540 && width <= 704) {
+        setSettings({
+          centerMode: true,
+          partialVisible: false,
+        });
+      } else {
+        setSettings({
+          centerMode: false,
+          partialVisible: true,
+        });
+      }
+    };
+
+    updateSettings();
+    window.addEventListener('resize', updateSettings);
+    return () => {
+      window.removeEventListener('resize', updateSettings);
+    };
+  }, []);
   return (
     <Carousel
       swipeable={true}
       draggable={true}
       showDots={false}
       responsive={responsive}
-      partialVisible={true}
+      {...settings}
+
       ssr={false}
       infinite={false}
       autoPlay={false}
@@ -70,12 +141,12 @@ export const PossibilitiesCarousel: React.FC = () => {
         "desktop",
         "laptop",
         "tablet",
-        "mobile",
+        // "mobile",
       ]}
       itemClass="carousel-item-padding-40-px"
-      className="py-6 h-fit min-h-[522px] px-8 md:px-[50px] lg:px-[80px]"
+      className="py-6 h-fit min-h-[522px] pl-0 px-8 md:px-[50px] lg:px-[80px]"
     >
-      <div className="ml-0 mx-4 py-8 overflow-hidden h-full">
+      <div className="ml-4 md:ml-0 mx-4 py-8 overflow-hidden h-full">
         <div className="flex flex-col bg-[#7F5CE2] bg-slide-primary max-w-[352px] w-full h-full min-h-[522px] rounded-3xl bg-cover">
           <p className="text-lg text-white p-7">
             Use <span className="font-bold">JOIN</span> as a secure and
@@ -105,14 +176,14 @@ export const PossibilitiesCarousel: React.FC = () => {
             items and features.
           </p>
           <div className="relative top-0 h-[380px] flex items-center px-1">
-            <div className="absolute h-full w-full bg-slide-card mix-blend-color-dodge bg-contain bg-top bg-no-repeat"></div>
+            <div className="absolute h-full w-full bg-slide-card mix-blend-color-dodge bg-contain bg-top bg-no-repeat"/>
             <Image
             draggable={false}
               src={card}
               width={1056}
               height={1113}
               alt="Join in-game purchase screen shot"
-              className="flex mx-auto h-full w-auto object-scale-down mix-blend-normal"
+              className="flex mx-auto h-full w-auto object-scale-down mix-blend-normal animate-bounce-token"
             />
           </div>
         </div>

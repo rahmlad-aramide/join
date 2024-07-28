@@ -31,8 +31,8 @@ export default function LayoutClient({
           </VideoBackground>
           {children}
           <Footer />
-        </>
-      )}
+          </>
+       )} 
     </>
   );
 }

@@ -71,17 +71,21 @@ img {
     );
   }
 
-.animated-text-color {
-    /* background: linear-gradient(90deg, #B0AFB1 4.29%, #878787 97.5%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: #C8C8C8; */
-color: #B0AFB1;
+  @media (max-width: 768px) {
+    .animated-text-background::before {
+      width: 220px;
+      height: 40px;
+    }
+    .animated-text-background::after {
+      width: 180px;
+      height: 60px;
+      
+    }
 }
 
 .react-multi-carousel-list {
   padding: 0rem 0 2rem 0;
-  cursor: grab;
+  /* cursor: grab; */
   }
 
   .bg-slide-primary {

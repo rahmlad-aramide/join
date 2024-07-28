@@ -38,7 +38,7 @@ export const AnimatedText: React.FC = () => {
         ref={textRef}
         className={`${
           isAnimating ? "animate-slide-out" : "animate-slide-in"
-        } rounded-full inline-flex items-center leading-tight my-2.5 animated-text-color text-center mx-auto relative z-10`}
+        } rounded-full inline-flex items-center leading-tight my-2.5 text-[#B0AFB1] text-center mx-auto relative z-10`}
       >
         {texts[currentTextIndex]}
       </span>

@@ -72,50 +72,50 @@ const navLinksRight: NavLink[] = [
 export const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
-  // const [scrolled, setScrolled] = useState(false);
-  // const [hidden, setHidden] = useState(false);
-  // const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
-  // useEffect(() => {
-  //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
-  //   const handleScroll = () => {
+  useEffect(() => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const handleScroll = () => {
 
-  //     if (scrollTop > 108) {
-  //       setScrolled(true);
-  //     } else {
-  //       setScrolled(false);
-  //     }
+      if (scrollTop > 108) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
 
-  //     if (scrollTop > lastScrollTop) {
-  //       setHidden(true);
-  //     } else {
-  //       setHidden(false);
-  //     }
+      if (scrollTop > lastScrollTop) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
 
-  //     setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
-  //   };
+      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [lastScrollTop]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
 
   return (
     <>
       <nav
         className={clsx(
-          "transition-all duration-300 ease-in-out w-full z-50",
-          // {
-          //   "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
-          //   "-translate-y-full": hidden,
-          //   "translate-y-0": !hidden,
-          // }
+          "transition-all duration-300 ease-in-out w-full fixed md:sticky top-0 z-50",
+          {
+            "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
+            "-translate-y-full": hidden,
+            "translate-y-0": !hidden,
+          }
         )}
       >
         <div className="h-20 w-full flex flex-col items-center justify-center">
-          <div className="w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex justify-between items-center">
+          <div className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex justify-between items-center">
             <ul className="hidden lg:flex gap-5 items-center w-2/5">
               {navLinksLeft.map((navLink, idx) =>
                 navLink.type === "dropdown" ? (
@@ -183,8 +183,8 @@ export const Navbar = () => {
                 )
               )}
             </ul>
-            <Link href="/" className="flex translate-y-4">
-              <Logo className="h-6 md:h-full" />
+            <Link href="/" className="flex translate-y-4 mx-auto lg:mx-0">
+              <Logo className="h-[60px] md:h-full" />
             </Link>
             <ul className="hidden lg:flex justify-end gap-5 items-center w-2/5">
               {navLinksRight.map((navLink, idx) => (
