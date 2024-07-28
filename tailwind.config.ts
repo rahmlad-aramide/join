@@ -28,6 +28,7 @@ const config = {
         'custom-conic': 'conic-gradient(from 0deg, #BB08F9 0%, #BB08F9 21%, #9694FF 36%, #FF65E6 57%, #2998D6 78%, #6904FF 100%)',
         'join-tokens': "url('/join-tokens-bg.png')",
         'slide-primary': "url('/slide1-bg.png')",
+        'slide-card': "url('/slide2-bg.png')",
         'joinda-linear': "linear-gradient(98deg, rgba(102, 254, 203, 0.20) 6.1%, rgba(137, 64, 255, 0.20) 103.66%), rgba(29, 29, 29, 0.05)",
       },
       maxWidth: {

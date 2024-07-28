@@ -5,11 +5,6 @@ import "react-multi-carousel/lib/styles.css";
 import joinda1 from "@/app/assets/images/joinda-app-1.png";
 import joinda2 from "@/app/assets/images/joinda-app-2.png";
 
-interface CarouselProps {
-  carouselState?: {
-    currentSlide: number;
-  };
-}
 
 const responsive = {
   all: {
@@ -40,6 +35,7 @@ export const EcosystemCarousel = () => {
     >
       <div className="mt-auto overflow-hidden">
         <Image
+        draggable={false}
           src={joinda1}
           width={359}
           height={429}
@@ -49,6 +45,7 @@ export const EcosystemCarousel = () => {
       </div>
       <div className="mt-auto overflow-hidden">
         <Image
+        draggable={false}
           src={joinda2}
           width={359}
           height={429}
@@ -61,26 +58,13 @@ export const EcosystemCarousel = () => {
 };
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({ next, previous, ...rest }) => {
-  // const { carouselState: { currentSlide } } = rest;
   const currentSlide = rest.carouselState?.currentSlide ?? 0;
 
   return (
-    <div className="carousel-button-group absolute"> 
+    <div className="carousel-button-group absolute w-full h-[3px] bottom-0 bg-[#5E5E5E] rounded-[2.286px]"> 
       {/* remember to give it position:absolute */}
       <button disabled={!previous} className={currentSlide === 0 ? 'disable bg-blue-500 w-[20px] h-1' : ''} onClick={() => previous && previous()} />
       <button disabled={!next} onClick={() => next && next()} />
     </div>
   );
 };
-// const ButtonGroup: React.FC<{next?: ()=>void, previous?: ()=>void} & CarouselProps> = ({ next, previous, ...rest }) => {
-//   // const { carouselState: { currentSlide } } = rest;
-//   const currentSlide = rest.carouselState?.currentSlide ?? 0;
-
-//   return (
-//     <div className="carousel-button-group"> 
-//       {/* remember to give it position:absolute */}
-//       <button className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
-//       <button onClick={() => next()} />
-//     </div>
-//   );
-// };

@@ -2,14 +2,19 @@
 import { gilroy } from "@/app/fonts";
 import React, { useState, useEffect, useRef } from "react";
 
-const texts = ["Socials", "Rewards", "Gamings"];
-// const widths = [22, 25, 28];
-const widths = [180+60, 216+60, 228+60];
+const texts = ["Socials", "Rewards", "Gaming"];
 
 export const AnimatedText: React.FC = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const textRef = useRef<HTMLSpanElement>(null);
+  const [width, setWidth] = useState(236);
+
+  useEffect(() => {
+    if (textRef.current) {
+      setWidth(textRef.current.offsetWidth+36);
+    }
+  }, [currentTextIndex]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,9 +29,9 @@ export const AnimatedText: React.FC = () => {
 
   return (
     <span
-      className={`relative inline-flex items-center rounded-full animated-text-background text-center transition-all duration-1000 ${gilroy.className}`}
+      className={`relative inline-flex items-center rounded-full animated-text-background text-center transition-all duration-200 ${gilroy.className}`}
       style={{
-        width: `${widths[currentTextIndex]}px`,
+        width: `${width}px`,
       }}
     >
       <span

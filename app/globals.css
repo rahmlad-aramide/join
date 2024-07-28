@@ -6,6 +6,13 @@
   scroll-behavior: smooth;
   scrollbar-width: 4px;
 }
+img {
+  -webkit-user-drag: none; /* Chrome, Safari, newer versions of Opera */
+  -moz-user-drag: none;    /* Firefox */
+  -ms-user-drag: none;     /* Internet Explorer and Edge */
+  -o-user-drag: none;      /* Older versions of Opera */
+}
+
 
 .disabled-button {
     background: linear-gradient(89deg, rgba(102, 102, 102, 0.80) 0%, rgba(255, 255, 255, 0.10) 99.92%);
@@ -73,9 +80,11 @@ background-clip: text;
 
 .react-multi-carousel-list {
   padding: 0rem 0 2rem 0;
+  cursor: grab;
   }
 
-  .bg-join-tokens {
-    background-size: calc(100% - 30px);
+  .bg-slide-primary {
+    background-size: calc(100% - 10px);
     background-position: bottom left;
+    background-repeat: no-repeat;
   }
