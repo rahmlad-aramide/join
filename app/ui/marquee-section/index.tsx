@@ -9,12 +9,12 @@ export const MarqueeSection = () => {
       };
   return (
     <section style={gradientStyle} className="flex flex-col md:flex-row items-center justify-center px-6 w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto rounded-[50px]">
-      <div className="flex flex-col w-[45%] items-center justify-center py-[100px]">
-        <h2 className="text-center text-5xl text-white font-bold mb-[60px] w-full max-w-[12ch]">With JOIN, every dream is a possibility </h2>
+      <div className="flex flex-col w-full md:w-[45%] items-center justify-center py-10 md:py-[100px]">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-[60px] w-full max-w-[12ch]">With JOIN, every dream is a possibility </h2>
         <Button variant="shaped-white">Join Whitelisting  </Button>
       </div>
-      <div className="flex items-center justify-center w-[55%]">
-        <Image src={tokens} width={400} height={390} alt="Two 3D Join tokens placed on top of each other" className="animate-bounce-token" />
+      <div className="flex items-center justify-center w-full md:w-[55%]">
+        <Image src={tokens} width={400} height={390} alt="Two 3D Join tokens placed on top of each other" className="animate-bounce-token scale-90 md:scale-100" />
       </div>
     </section>
   );

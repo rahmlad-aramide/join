@@ -72,10 +72,11 @@ img {
   }
 
 .animated-text-color {
-    background: linear-gradient(90deg, #C8C8C8 4.29%, #878787 97.5%);
+    /* background: linear-gradient(90deg, #B0AFB1 4.29%, #878787 97.5%);
 background-clip: text;
 -webkit-background-clip: text;
--webkit-text-fill-color: #C8C8C8;
+-webkit-text-fill-color: #C8C8C8; */
+color: #B0AFB1;
 }
 
 .react-multi-carousel-list {

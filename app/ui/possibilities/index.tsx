@@ -1,12 +1,12 @@
-import { Divider, LogoGradient } from "@/app/assets/svg"
+import { Divider, LogoGradient, LogoGradientSm } from "@/app/assets/svg"
 import { PossibilitiesCarousel } from "./carousel"
 
 export const Possibilities = () => {
     return (
         <section>
-            <div className="text-4xl md:text-5xl font-bold text-white mt-[100px] w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto ">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-[100px] w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto ">
                 <h2>Endless Possibilities</h2>
-                <h3 className="inline-flex mt-2">Do it all on<LogoGradient className="ml-3 -translate-y-1" /> </h3>
+                <h3 className="inline-flex mt-2">Do it all on<LogoGradientSm className="inline-flex md:hidden ml-1.5 sm:ml-3 -translate-y-1 scale-[0.8] md:scale-100" /> <LogoGradient className="hidden md:inline-flex ml-3 -translate-y-1" /> </h3>
             </div>
             <PossibilitiesCarousel />
             <div className="flex w-full mt-24"><Divider /> </div>

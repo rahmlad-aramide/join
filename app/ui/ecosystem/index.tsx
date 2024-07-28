@@ -5,6 +5,7 @@ import {
   ControllerIcon,
   Divider,
   JoinEcoToken,
+  JoinEcoTokenSm,
   OutlineSend,
 } from "@/app/assets/svg";
 import { VideoBackground } from "@/app/ui/bg-video";
@@ -19,8 +20,8 @@ export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
         id={type}
         className="w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center pt-20"
       >
-        <h1 className="text-5xl font-semibold inline-flex items-center mt-[45px] mb-6">
-          The <JoinEcoToken className="mx-2 translate-y-1" /> Ecosystem
+        <h1 className="text-3xl md:text-5xl font-semibold inline-flex items-center mt-[45px] mb-6">
+          The <JoinEcoTokenSm className="inline-flex md:hidden mx-2 translate-y-1" /> <JoinEcoToken className="hidden md:inline-flex w-full mx-2 translate-y-1" /> Ecosystem
         </h1>
         <div className="bg-[rgba(4,20,29,0.70)] rounded-3xl py-14 pr-7 w-full flex">
           <div className="w-1/4 space-y-2">

@@ -13,10 +13,13 @@ export const Hero = () => {
         <h1 className="bg-[rgba(92,78,222,0.1)] rounded-[25px] border border-[rgba(255,255,255,0.10)] md:inline-flex px-5 py-3 text-[#9891E1] text-lg font-semibold mb-[55px]">
           Join: One For All
         </h1>
-        <h2 className="relative z-10 text-[21px] sm:text-3xl md:text-[55px] font-bold tracking-wider text-center text-white md:leading-[70px] mb-10">
-          Experience JOIN where <br />
-          <span className="sm:hidden md:inline-flex relative items-center transition-all duration-300 pt-2">
-            <AnimatedText />
+        <h2 className="relative z-10 text-3xl sm:text-4xl md:text-[55px] font-bold tracking-wider text-center text-white md:leading-[70px] mb-10">
+          <span className="inline-flex max-w-[18ch] md:max-w-full">
+          Experience JOIN where 
+          </span>
+          <br />
+          <span className="sm:hidden md:flex relative items-center transition-all duration-300 pt-2">
+            <AnimatedText /> <br className="flex md:hidden" />
             <span className="py-2 inline-flex items-center leading-tight mr-2 ml-2">
               meets Blockchain
             </span>

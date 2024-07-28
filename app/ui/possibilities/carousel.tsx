@@ -73,7 +73,7 @@ export const PossibilitiesCarousel: React.FC = () => {
         "mobile",
       ]}
       itemClass="carousel-item-padding-40-px"
-      className="py-6 px-10 w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto h-fit min-h-[522px]"
+      className="py-6 h-fit min-h-[522px] px-8 md:px-[50px] lg:px-[80px]"
     >
       <div className="ml-0 mx-4 py-8 overflow-hidden h-full">
         <div className="flex flex-col bg-[#7F5CE2] bg-slide-primary max-w-[352px] w-full h-full min-h-[522px] rounded-3xl bg-cover">
