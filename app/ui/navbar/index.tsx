@@ -72,46 +72,46 @@ const navLinksRight: NavLink[] = [
 export const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
-  const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
+  // const [scrolled, setScrolled] = useState(false);
+  // const [hidden, setHidden] = useState(false);
+  // const [lastScrollTop, setLastScrollTop] = useState(0);
 
-  useEffect(() => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const handleScroll = () => {
+  // useEffect(() => {
+  //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  //   const handleScroll = () => {
 
-      if (scrollTop > 108) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+  //     if (scrollTop > 108) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
 
-      if (scrollTop > lastScrollTop) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
+  //     if (scrollTop > lastScrollTop) {
+  //       setHidden(true);
+  //     } else {
+  //       setHidden(false);
+  //     }
 
-      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
-    };
+  //     setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollTop]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollTop]);
 
   return (
     <>
       <nav
         className={clsx(
           "transition-all duration-300 ease-in-out w-full fixed top-0 z-50",
-          {
-            "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
-            "-translate-y-full": hidden,
-            "translate-y-0": !hidden,
-          }
+          // {
+          //   "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
+          //   "-translate-y-full": hidden,
+          //   "translate-y-0": !hidden,
+          // }
         )}
       >
         <div className="h-20 w-full flex flex-col items-center justify-center">
