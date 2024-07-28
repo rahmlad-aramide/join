@@ -9,7 +9,7 @@ import { Preloader } from "../preloader";
 export const Hero = () => {
   return (
     <VideoBackground as="section" height="screen" variant="hero">
-      <div className="w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center pt-20">
+      <div className="w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center">
         <h1 className="bg-[rgba(92,78,222,0.1)] rounded-[25px] border border-[rgba(255,255,255,0.10)] md:inline-flex px-5 py-3 text-[#9891E1] text-lg font-semibold mb-[55px]">
           Join: One For All
         </h1>
