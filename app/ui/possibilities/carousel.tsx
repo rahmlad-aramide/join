@@ -13,25 +13,25 @@ import funds from "@/app/assets/images/possibilities/funds.webp";
 
 const responsive = {
   superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-    slidesToSlide: 2,
-    partialVisibilityGutter: 50
-  },
-  largeDesktop: {
-    breakpoint: { max: 3000, min: 1408 },
+    breakpoint: { max: 4000, min: 2000 },
     items: 4,
     slidesToSlide: 2,
     partialVisibilityGutter: 50
   },
+  largeDesktop: {
+    breakpoint: { max: 2000, min: 1408 },
+    items: 3,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 50
+  },
   desktop: {
-    breakpoint: { max: 1408, min: 1056 },
+    breakpoint: { max: 1408, min: 992 },
     items: 3,
     slidesToSlide: 1,
     partialVisibilityGutter: 50
   },
   laptop: {
-    breakpoint: { max: 1056, min: 704 },
+    breakpoint: { max: 992, min: 704 },
     items: 2,
     slidesToSlide: 1,
     partialVisibilityGutter: 50
