@@ -12,7 +12,6 @@ export default function LayoutClient({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState(true);
-  console.log("loading",loading)
 
   useEffect(() => {
     setTimeout(() => {

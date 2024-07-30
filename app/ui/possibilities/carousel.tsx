@@ -167,6 +167,27 @@ export const PossibilitiesCarousel: React.FC = () => {
         </div>
       </div>
       <div className="mx-4 py-8 overflow-hidden h-full">
+        <div className="bg-[#778692] flex flex-col justify-end max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
+          <p className="text-lg text-white py-7">
+            <span className="font-bold text-[#89DAD0]">
+              In-Game Purchases:{" "}
+            </span>
+            Spend <span className="font-bold">JOIN</span> on various in-game
+            items and features.
+          </p>
+          <div className="flex items-center">
+            <Image
+            draggable={false}
+              src={purchases}
+              width={810}
+              height={1131}
+              alt="Join in-game purchase screen shot"
+              className="flex mx-auto h-auto w-auto"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mx-4 py-8 overflow-hidden h-full">
         <div className="bg-[#030E14] mix-blend-color-dodge max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
           <p className="text-lg text-white py-7">
           Introducing the {" "}
@@ -184,27 +205,6 @@ export const PossibilitiesCarousel: React.FC = () => {
               height={1113}
               alt="Join in-game purchase screen shot"
               className="flex mx-auto h-full w-auto object-scale-down mix-blend-normal animate-bounce-token"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="mx-4 py-8 overflow-hidden h-full">
-        <div className="bg-[#778692] flex flex-col justify-end max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
-          <p className="text-lg text-white py-7">
-            <span className="font-bold text-[#89DAD0]">
-              In-Game Purchases:{" "}
-            </span>
-            Spend <span className="font-bold">JOIN</span> on various in-game
-            items and features.
-          </p>
-          <div className="flex items-center">
-            <Image
-            draggable={false}
-              src={purchases}
-              width={810}
-              height={1131}
-              alt="Join in-game purchase screen shot"
-              className="flex mx-auto h-auto w-auto"
             />
           </div>
         </div>

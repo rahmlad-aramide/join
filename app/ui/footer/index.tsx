@@ -45,7 +45,7 @@ export const Footer = () => {
         >
           With Join, every dream is a possibility.
         </h4>
-        <p className="mb-8 md:mb-0 w-full text-center md:text-left max-w-[42ch]">
+        <p className="hidden md:block mb-8 md:mb-0 w-full text-center md:text-left max-w-[42ch]">
           For investment inquiries, please{" "}
           <a href="mailto:investment@thejoin.io" className="underline">
             reach out
@@ -76,6 +76,17 @@ export const Footer = () => {
           ))}
         </ul>
       </div>
+      <p className="md:hidden mb-6 mt-10 w-full text-center md:text-left max-w-[42ch]">
+          For investment inquiries, please{" "}
+          <a href="mailto:investment@thejoin.io" className="underline">
+            reach out
+          </a>{" "}
+          to us. For community requests, please reach out to us{" "}
+          <a href="mailto:community@thejoin.io" className="underline">
+            here
+          </a>
+          .
+        </p>
     </footer>
   );
 };

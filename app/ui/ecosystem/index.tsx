@@ -1,17 +1,17 @@
 'use client'
 import Link from "next/link";
-import Image from "next/image";
 import {
   AppIcon,
+  AppStoreIcon,
   ControllerIcon,
   Divider,
   JoinEcoToken,
   JoinEcoTokenSm,
   OutlineSend,
+  PlayStoreIcon,
 } from "@/app/assets/svg";
 import { VideoBackground } from "@/app/ui/bg-video";
 import { Button } from "../button";
-import joint from "@/app/assets/images/joint-app.webp";
 import { EcosystemCarousel } from "./carousel";
 import { useState } from "react";
 
@@ -68,12 +68,16 @@ export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
                 </ul>
                 <Button
                   variant="shaped-gradient"
-                  className="flex justify-center items-center mt-5 mb-10"
+                  className="flex justify-center items-center mt-5 mb-[30px]"
                 >
-                  <span className="px-2">View More</span> <OutlineSend />{" "}
+                  <span className="px-2">Visit Website</span> <OutlineSend />{" "}
                 </Button>
+                <div className="flex gap-5 mb-10">
+                  <Button variant="ordinary"><PlayStoreIcon /></Button>
+                  <Button variant="ordinary"><AppStoreIcon /></Button>
+                </div>
                 <div className="w-full max-w-[600px] mx-auto bg-[#020C11] rounded-[20px] pt-9 px-12 mt-5">
-                  <EcosystemCarousel />
+                  <EcosystemCarousel type={activeTab} />
                 </div>
               </div>
             ) : (
@@ -97,18 +101,16 @@ export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
                 </ul>
                 <Button
                   variant="shaped-gradient"
-                  className="flex justify-center items-center mt-5 mb-10"
+                  className="flex justify-center items-center mt-5 mb-[30px]"
                 >
-                  <span className="px-2">View More</span> <OutlineSend />{" "}
+                  <span className="px-2">Visit Website</span> <OutlineSend />{" "}
                 </Button>
+                <div className="flex gap-5 mb-10">
+                  <Button variant="ordinary"><PlayStoreIcon /></Button>
+                  <Button variant="ordinary"><AppStoreIcon /></Button>
+                </div>
                 <div className="w-full max-w-[600px] mx-auto bg-[#020C11] rounded-[20px] pt-9 px-12 mt-5">
-                  <Image
-                    src={joint}
-                    width={1078}
-                    height={1290}
-                    alt="Two flying kites around Join token"
-                    className="flex w-full h-auto"
-                  />
+                  <EcosystemCarousel type={activeTab} />
                 </div>
               </div>
             )}
@@ -196,24 +198,16 @@ export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
               variant="shaped-gradient"
               className="-translate-x-4 flex justify-center items-center mt-5"
             >
-              <span className="px-2">View More</span> <OutlineSend />{" "}
+              <span className="px-2">Visit Website</span> <OutlineSend />{" "}
             </Button>
+            <div className="flex h-fit w-full gap-5 mt-[50px]">
+              <Button variant="ordinary"><PlayStoreIcon /></Button>
+              <Button variant="ordinary"><AppStoreIcon /></Button>
+            </div>
           </div>
-          {type === "joinda" ? (
             <div className="w-2/5 bg-[#020C11] rounded-[20px] pt-9 px-12">
-              <EcosystemCarousel />
+              <EcosystemCarousel type={type} />
             </div>
-          ) : (
-            <div className="w-2/5 bg-[#020C11] rounded-[20px] pt-9 px-12">
-              <Image
-                src={joint}
-                width={360}
-                height={430}
-                alt="Two flying kites around Join token"
-                className="flex w-full h-auto"
-              />
-            </div>
-          )}
         </div>
       </div>
       <div className="flex w-full mt-[60px]">

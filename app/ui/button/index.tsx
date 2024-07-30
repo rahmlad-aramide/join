@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type?: "submit" | "button";
   disabled?: boolean;
-  variant?: "text" |"outlined" | "shaped" | "shaped-disabled" | "shaped-white" | "shaped-gradient" | "shaped-gradient-outline";
+  variant?: "text" |"ordinary"|"outlined" | "shaped" | "shaped-disabled" | "shaped-white" | "shaped-gradient" | "shaped-gradient-outline";
   size?: "small" | "medium" | "large";
   icon?: React.ReactNode;
   loading?: boolean;
@@ -30,7 +30,8 @@ export const Button: React.FC<ButtonProps> = ({
     "shaped-gradient-outline": "bg-transparent hover:scale-95 active:scale-100 transition duration-200",
     "shaped-white": "text-[#04141D] font-semibold text-[23px] hover:scale-95 active:scale-100 transition duration-200",
     primary: "bg-primary-500 text-white",
-    text: "bg-transparent border-none text-[#F2E6E0] hover:text-hoverPrimary"
+    text: "bg-transparent border-none text-[#F2E6E0] hover:text-hoverPrimary",
+    ordinary: "bg-transparent border-none scale-100 !px-0 hover:scale-90 active:scale-100 transition duration-200"
   };
 
   const variantSpecificStyles = variant === 'shaped' ? {
