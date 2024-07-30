@@ -437,6 +437,14 @@ export const NavUnderline = (props: any) => {
   );
 };
 
+export const TimerDots = (props:any) => {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="4" height="15" viewBox="0 0 4 15" fill="none">
+  <ellipse cx="2" cy="2.16669" rx="2" ry="2.16669" fill="#7D7D7D"/>
+  <ellipse cx="2" cy="12.8332" rx="2" ry="2.16669" fill="#7D7D7D"/>
+</svg>
+  )
+}
 export const LoadingIndicator = (props: any) => {
   return (
     <svg

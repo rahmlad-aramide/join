@@ -26,9 +26,9 @@ export default function LayoutClient({
         <Preloader />
       ) : (
         <>
-          <VideoBackground as="header" height="fit-content">
+          {/* <VideoBackground as="header" variant="nav" height="fit-content">
             <Navbar />
-          </VideoBackground>
+          </VideoBackground> */}
           {children}
           <Footer />
           </>

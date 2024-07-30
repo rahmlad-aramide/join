@@ -13,6 +13,21 @@ img {
   -o-user-drag: none;      /* Older versions of Opera */
 }
 
+.silver-text-gradient {
+  background: linear-gradient(63deg, #EEF1F0 7.18%, #71757E 83.56%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.silver-button-gradient {
+  background: linear-gradient(89deg, rgba(102, 102, 102, 0.80) 0%, rgba(255, 255, 255, 0.10) 99.92%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 .disabled-button {
     background: linear-gradient(89deg, rgba(102, 102, 102, 0.80) 0%, rgba(255, 255, 255, 0.10) 99.92%);

@@ -11,8 +11,10 @@ export default function Home() {
       <Hero />
       <Possibilities />
       <Ecosystem type="joinda" />
-      <div className="h-[101px]"></div>
-      <Ecosystem type="joint" />
+      <div className="hidden lg:block">
+        <div className="h-[101px]"></div>
+        <Ecosystem type="joint" />
+      </div>
       <Marquee />
       <MarqueeSection />
     </main>

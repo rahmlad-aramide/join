@@ -60,6 +60,7 @@ const navLinksRight: NavLink[] = [
     path: "/whitelisting",
     type: "button",
     buttonType: "shaped",
+    disabled: true,
   },
   {
     label: "Join Presale",
@@ -106,12 +107,12 @@ export const Navbar = () => {
     <>
       <nav
         className={clsx(
-          "transition-all duration-300 ease-in-out w-full fixed md:sticky top-0 z-50",
-          {
-            "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
-            "-translate-y-full": hidden,
-            "translate-y-0": !hidden,
-          }
+          "transition-all duration-300 ease-in-out w-full z-50",
+          // {
+          //   "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
+          //   "-translate-y-full": hidden,
+          //   "translate-y-0": !hidden,
+          // }
         )}
       >
         <div className="h-20 w-full flex flex-col items-center justify-center">
@@ -191,6 +192,7 @@ export const Navbar = () => {
                 <Button
                   key={idx}
                   variant={navLink.buttonType}
+                  disabled={navLink.disabled}
                   className="font-semibold"
                   onClick={() => {
                     router.push(`${navLink.path}`);
