@@ -108,11 +108,6 @@ export const Navbar = () => {
       <nav
         className={clsx(
           "transition-all duration-300 ease-in-out w-full z-50",
-          // {
-          //   "backdrop-blur-lg bg-transparent bg-opacity-70": scrolled,
-          //   "-translate-y-full": hidden,
-          //   "translate-y-0": !hidden,
-          // }
         )}
       >
         <div className="h-20 w-full flex flex-col items-center justify-center">
