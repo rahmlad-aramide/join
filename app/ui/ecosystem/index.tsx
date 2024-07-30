@@ -14,6 +14,12 @@ import { VideoBackground } from "@/app/ui/bg-video";
 import { Button } from "../button";
 import { EcosystemCarousel } from "./carousel";
 import { useState } from "react";
+// import playstore from '/playstore.svg'
+// import appstore from '/appstore.svg'
+// import appstore from '/appstore.png'
+import Image from "next/image";
+import appstore from '@/app/assets/appstore.png'
+import playtore from '@/app/assets/playstore.png'
 
 export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
   const [activeTab, setActiveTab] = useState<"joint" | "joinda">(type);
@@ -106,7 +112,7 @@ export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
                   <span className="px-2">Visit Website</span> <OutlineSend />{" "}
                 </Button>
                 <div className="flex gap-5 mb-10">
-                  <Button variant="ordinary"><PlayStoreIcon /></Button>
+                  <Button variant="ordinary"><span><PlayStoreIcon /></span></Button>
                   <Button variant="ordinary"><AppStoreIcon /></Button>
                 </div>
                 <div className="w-full max-w-[600px] mx-auto bg-[#020C11] rounded-[20px] pt-9 px-12 mt-5">
@@ -200,9 +206,9 @@ export const Ecosystem: React.FC<{ type: "joint" | "joinda" }> = ({ type }) => {
             >
               <span className="px-2">Visit Website</span> <OutlineSend />{" "}
             </Button>
-            <div className="flex h-fit w-full gap-5 mt-[50px]">
-              <Button variant="ordinary"><PlayStoreIcon /></Button>
-              <Button variant="ordinary"><AppStoreIcon /></Button>
+            <div className="flex w-full gap-5">
+            <Button variant="ordinary"><PlayStoreIcon /></Button>
+            <Button variant="ordinary"><AppStoreIcon /></Button>
             </div>
           </div>
             <div className="w-2/5 bg-[#020C11] rounded-[20px] pt-9 px-12">

@@ -46,7 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
     backgroundPosition: "center",
     filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
   } : variant === 'shaped-gradient' ? {
-    backgroundImage: "url('/shaped-gradient.svg')",
+    backgroundImage: "url('/shaped-gradient.png')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: 'contain',
@@ -56,7 +56,7 @@ export const Button: React.FC<ButtonProps> = ({
     backgroundSize: "contain",
     backgroundPosition: "center",
   } : variant === 'shaped-white' ? {
-    backgroundImage: "url('data:image/svg+xml,%3Csvg width=%22248%22 height=%2263%22 viewBox=%220 0 248 63%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M36 62.5C33.185 62.5 30.5735 61.6208 29.1098 60.1802L7.34976 38.6004C3.40521 34.6886 3.40521 28.3114 7.34976 24.3996L29.1098 2.81984C30.5735 1.37923 33.185 0.5 36 0.5V62.5Z%22 fill=%22%231D1D1D%22 fill-opacity=%220.05%22/%3E%3Cpath d=%22M36 62.5C33.185 62.5 30.5735 61.6208 29.1098 60.1802L7.34976 38.6004C3.40521 34.6886 3.40521 28.3114 7.34976 24.3996L29.1098 2.81984C30.5735 1.37923 33.185 0.5 36 0.5V62.5Z%22 fill=%22white%22/%3E%3Crect width=%22176%22 height=%2262%22 transform=%22translate(36 0.5)%22 fill=%22%231D1D1D%22 fill-opacity=%220.05%22/%3E%3Crect width=%22176%22 height=%2262%22 transform=%22translate(36 0.5)%22 fill=%22white%22/%3E%3Cpath d=%22M212 62.5C215.609 62.5 218.957 61.6208 220.833 60.1802L241.803 43.9589C249.812 37.7626 249.812 25.2374 241.803 19.0411L220.833 2.81984C218.957 1.37923 215.609 0.5 212 0.5V62.5Z%22 fill=%22%231D1D1D%22 fill-opacity=%220.05%22/%3E%3Cpath d=%22M212 62.5C215.609 62.5 218.957 61.6208 220.833 60.1802L241.803 43.9589C249.812 37.7626 249.812 25.2374 241.803 19.0411L220.833 2.81984C218.957 1.37923 215.609 0.5 212 0.5V62.5Z%22 fill=%22white%22/%3E%3C/svg%3E')",
+    backgroundImage: "url('/shaped-white.png')",
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
     backgroundPosition: "center",

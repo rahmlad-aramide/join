@@ -90,7 +90,6 @@ const responsive = {
     breakpoint: { max: 352, min: 0 },
     items: 1,
     slidesToSlide: 1,
-    // partialVisibilityGutter: 50
   },
 };
 export const PossibilitiesCarousel: React.FC = () => {
@@ -190,14 +189,14 @@ export const PossibilitiesCarousel: React.FC = () => {
       <div className="mx-4 py-8 overflow-hidden h-full">
         <div className="bg-[#030E14] mix-blend-color-dodge max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
           <p className="text-lg text-white py-7">
-          Introducing the {" "}
+          Introducing our {" "}
             <span className="font-bold text-[#89DAD0]">
-            world&apos;s first
+            global
             </span>{" "}
            decentralized crypto debit card for in - store and online payments.
           </p>
           <div className="relative top-0 h-[380px] flex items-center px-1">
-            <div className="absolute h-full w-full bg-slide-card mix-blend-color-dodge bg-contain bg-top bg-no-repeat"/>
+            <div className="absolute h-full w-full bg-slide-card mix-blend-color-dodge bg-contain bg-center bg-no-repeat"/>
             <Image
             draggable={false}
               src={card}
